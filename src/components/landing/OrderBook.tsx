@@ -5,10 +5,11 @@ type Level = { id: string; price: number; size: number; total: number };
 
 const MID = 67420.5;
 
+// deterministic so SSR and client markup match
 function seed(side: "bid" | "ask"): Level[] {
-  return Array.from({ length: 8 }, (_, i) => {
+  const base = side === "bid" ? [2.4, 1.1, 3.05, 0.72, 1.86, 2.63, 1.34, 0.95] : [1.72, 2.85, 0.88, 2.14, 1.29, 3.1, 0.64, 2.02];
+  return base.map((size, i) => {
     const price = side === "bid" ? MID - (i + 1) * 3.5 : MID + (i + 1) * 3.5;
-    const size = 0.4 + Math.random() * 3.2;
     return { id: `${side}-${i}`, price, size, total: 0 };
   });
 }
