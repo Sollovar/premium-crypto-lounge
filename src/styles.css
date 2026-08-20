@@ -182,3 +182,101 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    background-image: var(--gradient-sand);
+    background-attachment: fixed;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+@utility glass-cream {
+  background-image: var(--gradient-cream);
+  backdrop-filter: blur(14px);
+  border: 1px solid oklch(1 0 0 / 0.6);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility tabular {
+  font-family: var(--font-mono-num);
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes ticker-flash-up {
+  0% {
+    background-color: color-mix(in oklab, var(--bid) 22%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes ticker-flash-down {
+  0% {
+    background-color: color-mix(in oklab, var(--ask) 22%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@utility flash-up {
+  animation: ticker-flash-up 0.7s ease-out;
+}
+
+@utility flash-down {
+  animation: ticker-flash-down 0.7s ease-out;
+}
+
+@utility float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+@utility shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+@utility pulse-ring {
+  animation: pulse-ring 2.2s ease-out infinite;
+}
