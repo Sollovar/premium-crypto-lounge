@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowUpRight, Gauge, Layers, Radio, ShieldCheck, Waves } from "lucide-react";
 import logoMark from "@/assets/logo-mark.png";
 import { CoinOrbit } from "@/components/landing/CoinOrbit";
+import { GlyphMatrix } from "@/components/landing/GlyphMatrix";
 import { OrderBook } from "@/components/landing/OrderBook";
 import { Button } from "@/components/ui/button";
 
@@ -191,7 +192,14 @@ function Index() {
 
       {/* Stats */}
       <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
-        <div className="glass-cream grid grid-cols-2 gap-y-8 rounded-3xl px-6 py-8 sm:grid-cols-4">
+        <div className="glass-cream relative grid grid-cols-2 gap-y-8 overflow-hidden rounded-3xl px-6 py-8 sm:grid-cols-4">
+          <GlyphMatrix
+            className="opacity-[0.22]"
+            cellSize={13}
+            interval={110}
+            color="oklch(0.505 0.024 65)"
+            fadeBottom={0.75}
+          />
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -199,7 +207,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, ease, delay: i * 0.08 }}
-              className="text-center"
+              className="relative text-center"
             >
               <div className="tabular text-2xl font-semibold sm:text-3xl">{s.value}</div>
               <div className="mt-1.5 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -212,8 +220,15 @@ function Index() {
 
       {/* Meme coin orbit */}
       <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
-        <div className="glass-cream grid items-center gap-10 rounded-3xl px-6 py-12 sm:px-10 lg:grid-cols-[1fr_1.1fr]">
-          <div>
+        <div className="glass-cream relative grid items-center gap-10 overflow-hidden rounded-3xl px-6 py-12 sm:px-10 lg:grid-cols-[1fr_1.1fr]">
+          <GlyphMatrix
+            className="opacity-[0.18]"
+            cellSize={16}
+            interval={120}
+            mutationRate={0.03}
+            color="oklch(0.505 0.024 65)"
+          />
+          <div className="relative">
             <motion.span
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -249,6 +264,13 @@ function Index() {
 
       {/* Features */}
       <section id="platform" className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
+        <GlyphMatrix
+          className="opacity-[0.14] [mask-image:radial-gradient(75%_65%_at_50%_35%,black,transparent)]"
+          cellSize={18}
+          interval={140}
+          mutationRate={0.025}
+          color="oklch(0.505 0.024 65)"
+        />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -289,6 +311,12 @@ function Index() {
           transition={{ duration: 0.9, ease }}
           className="glass-cream relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-14"
         >
+          <GlyphMatrix
+            className="opacity-[0.2]"
+            cellSize={15}
+            interval={100}
+            color="oklch(0.505 0.024 65)"
+          />
           <div
             aria-hidden
             className="pointer-events-none absolute -bottom-24 left-1/2 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-sand-deep/50 blur-3xl"
