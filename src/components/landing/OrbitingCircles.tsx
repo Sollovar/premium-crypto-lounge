@@ -36,16 +36,7 @@ export function OrbitingCircles({
         animationDirection: reverse ? "reverse" : "normal",
       }}
     >
-      <div
-        className="orbit-counter flex h-full w-full items-center justify-center"
-        style={{
-          animationDuration: `${duration}s`,
-          animationDelay: `${delay}s`,
-          animationDirection: reverse ? "normal" : "reverse",
-        }}
-      >
-        {children}
-      </div>
+      <div className="flex h-full w-full items-center justify-center">{children}</div>
     </div>
   );
 }
