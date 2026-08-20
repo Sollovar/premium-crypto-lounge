@@ -207,7 +207,7 @@ function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, ease, delay: i * 0.08 }}
-              className="text-center"
+              className="relative text-center"
             >
               <div className="tabular text-2xl font-semibold sm:text-3xl">{s.value}</div>
               <div className="mt-1.5 text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
