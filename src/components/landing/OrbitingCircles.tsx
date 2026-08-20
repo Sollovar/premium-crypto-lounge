@@ -24,19 +24,32 @@ export function OrbitingCircles({
 }: OrbitingCirclesProps) {
   return (
     <div
-      className={`orbit pointer-events-none absolute left-1/2 top-1/2 flex items-center justify-center ${className}`}
+      className={`orbit-spin pointer-events-none absolute left-1/2 top-1/2 h-0 w-0 ${className}`}
       style={{
-        width: iconSize,
-        height: iconSize,
-        marginLeft: -iconSize / 2,
-        marginTop: -iconSize / 2,
-        ["--orbit-radius" as string]: `${radius}px`,
         animationDuration: `${duration}s`,
         animationDelay: `${delay}s`,
         animationDirection: reverse ? "reverse" : "normal",
       }}
     >
-      <div className="flex h-full w-full items-center justify-center">{children}</div>
+      <div
+        className="absolute"
+        style={{
+          transform: `translateX(${radius}px) translate(-50%, -50%)`,
+          width: iconSize,
+          height: iconSize,
+        }}
+      >
+        <div
+          className="orbit-spin flex h-full w-full items-center justify-center"
+          style={{
+            animationDuration: `${duration}s`,
+            animationDelay: `${delay}s`,
+            animationDirection: reverse ? "normal" : "reverse",
+          }}
+        >
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

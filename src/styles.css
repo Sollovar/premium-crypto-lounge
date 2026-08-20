@@ -299,21 +299,14 @@
   }
 }
 
-.orbit {
-  animation-name: orbit;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.orbit-counter {
+.orbit-spin {
   animation-name: orbit-counter;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orbit,
-  .orbit-counter {
+  .orbit-spin {
     animation-play-state: paused;
   }
 }
