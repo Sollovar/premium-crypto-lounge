@@ -191,7 +191,14 @@ function Index() {
 
       {/* Stats */}
       <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
-        <div className="glass-cream grid grid-cols-2 gap-y-8 rounded-3xl px-6 py-8 sm:grid-cols-4">
+        <div className="glass-cream relative grid grid-cols-2 gap-y-8 overflow-hidden rounded-3xl px-6 py-8 sm:grid-cols-4">
+          <GlyphMatrix
+            className="opacity-[0.22]"
+            cellSize={13}
+            interval={110}
+            color="oklch(0.505 0.024 65)"
+            fadeBottom={0.75}
+          />
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
