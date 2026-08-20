@@ -220,8 +220,15 @@ function Index() {
 
       {/* Meme coin orbit */}
       <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
-        <div className="glass-cream grid items-center gap-10 rounded-3xl px-6 py-12 sm:px-10 lg:grid-cols-[1fr_1.1fr]">
-          <div>
+        <div className="glass-cream relative grid items-center gap-10 overflow-hidden rounded-3xl px-6 py-12 sm:px-10 lg:grid-cols-[1fr_1.1fr]">
+          <GlyphMatrix
+            className="opacity-[0.18]"
+            cellSize={16}
+            interval={120}
+            mutationRate={0.03}
+            color="oklch(0.505 0.024 65)"
+          />
+          <div className="relative">
             <motion.span
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
