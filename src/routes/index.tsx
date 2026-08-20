@@ -209,6 +209,43 @@ function Index() {
         </div>
       </section>
 
+      {/* Meme coin orbit */}
+      <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
+        <div className="glass-cream grid items-center gap-10 rounded-3xl px-6 py-12 sm:px-10 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <motion.span
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease }}
+              className="inline-flex items-center rounded-full border border-border bg-cream/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground"
+            >
+              Long tail coverage
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease, delay: 0.06 }}
+              className="mt-5 font-display text-3xl leading-tight sm:text-4xl"
+            >
+              Every memecoin book, orbiting one engine.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease, delay: 0.12 }}
+              className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground"
+            >
+              DOGE to the newest launch — Vellum pulls thin, fast-moving meme liquidity into the same
+              normalised ladder as majors, so you can size a fill before the crowd sees the wick.
+            </motion.p>
+          </div>
+          <CoinOrbit />
+        </div>
+      </section>
+
       {/* Features */}
       <section id="platform" className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
         <motion.h2
