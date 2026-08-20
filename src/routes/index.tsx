@@ -264,6 +264,13 @@ function Index() {
 
       {/* Features */}
       <section id="platform" className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-24">
+        <GlyphMatrix
+          className="opacity-[0.14] [mask-image:radial-gradient(75%_65%_at_50%_35%,black,transparent)]"
+          cellSize={18}
+          interval={140}
+          mutationRate={0.025}
+          color="oklch(0.505 0.024 65)"
+        />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
