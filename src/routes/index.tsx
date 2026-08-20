@@ -311,6 +311,12 @@ function Index() {
           transition={{ duration: 0.9, ease }}
           className="glass-cream relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:px-14"
         >
+          <GlyphMatrix
+            className="opacity-[0.2]"
+            cellSize={15}
+            interval={100}
+            color="oklch(0.505 0.024 65)"
+          />
           <div
             aria-hidden
             className="pointer-events-none absolute -bottom-24 left-1/2 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-sand-deep/50 blur-3xl"
