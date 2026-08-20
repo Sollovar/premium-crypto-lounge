@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ArrowUpRight, Gauge, Layers, Radio, ShieldCheck, Waves } from "lucide-react";
 import logoMark from "@/assets/logo-mark.png";
+import { CoinOrbit } from "@/components/landing/CoinOrbit";
 import { OrderBook } from "@/components/landing/OrderBook";
 import { Button } from "@/components/ui/button";
 
