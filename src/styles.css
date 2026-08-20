@@ -280,3 +280,75 @@
 @utility pulse-ring {
   animation: pulse-ring 2.2s ease-out infinite;
 }
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit {
+  animation-name: orbit;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.orbit-counter {
+  animation-name: orbit-counter;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .orbit-counter {
+    animation-play-state: paused;
+  }
+}
+
+@utility coin-doge {
+  background: linear-gradient(145deg, oklch(0.93 0.09 92), oklch(0.84 0.12 88));
+  color: oklch(0.3 0.05 80);
+}
+
+@utility coin-pepe {
+  background: linear-gradient(145deg, oklch(0.9 0.09 145), oklch(0.78 0.13 148));
+  color: oklch(0.28 0.05 150);
+}
+
+@utility coin-shib {
+  background: linear-gradient(145deg, oklch(0.9 0.08 45), oklch(0.78 0.14 38));
+  color: oklch(0.28 0.05 40);
+}
+
+@utility coin-bonk {
+  background: linear-gradient(145deg, oklch(0.93 0.07 70), oklch(0.82 0.12 62));
+  color: oklch(0.28 0.05 60);
+}
+
+@utility coin-wif {
+  background: linear-gradient(145deg, oklch(0.92 0.05 30), oklch(0.8 0.09 24));
+  color: oklch(0.28 0.04 30);
+}
+
+@utility coin-floki {
+  background: linear-gradient(145deg, oklch(0.92 0.06 250), oklch(0.79 0.1 255));
+  color: oklch(0.28 0.05 258);
+}
+
+@utility coin-brett {
+  background: linear-gradient(145deg, oklch(0.92 0.06 215), oklch(0.79 0.11 225));
+  color: oklch(0.28 0.05 230);
+}
